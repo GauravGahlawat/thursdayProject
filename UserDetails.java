@@ -18,6 +18,7 @@ public class UserDetails {
 	private static final String USER_POST="post";
 	private static final String USER_LOCATION="location";
 	private static final String COMPANY_ID="company_id";
+	private static final String COMPANY_NAME="company_name";
 	private static final String COMPANY_DATE="date";
 	private static final String COMPANY_TIME="time";
 	private static final String COMPANY_LOCATION="location";
@@ -48,20 +49,19 @@ public class UserDetails {
 			ResultSet rs=pstm.executeQuery();
 			/*ResultSet rs=stmt.executeQuery("Select * from user e inner join company d where e.company_name=d.company_name where user_name=?");
 			*/
-
-			System.out.println("USER_ID"+ " \t" + "USER_NAME" +
-					"\t " + "USER_COMPANY_NAME"+ " \t" + "USER_SALARY"+ " \t" +
-					"USER_CONTACT_NO" + "\t " + "USER_POST" + " \t" + "USER_LOCATION" + " \t" +
-					/*rs.getString(COMPANY_ID)+ " \t" +*/ "COMPANY_DATE" + "\t " + "COMPANY_TIME" + "\t " +
-					"COMPANY_LOCATION" );   
+  
 			while(rs.next())
 			{
-				System.out.println(
-						rs.getInt(USER_ID) + " \t" + rs.getString(USER_NAME) +
-						"\t " + rs.getString(USER_COMPANY_NAME)+ " \t" + rs.getString(USER_SALARY)+ " \t" +
-						rs.getString(USER_CONTACT_NO)+ "\t " + rs.getString(USER_POST)+ " \t" + rs.getString(USER_LOCATION)+ " \t" +
-						/*rs.getString(COMPANY_ID)+ " \t" +*/ rs.getString(COMPANY_DATE)+ "\t " +rs.getString(COMPANY_TIME)+ "\t " +
-						rs.getString(COMPANY_LOCATION));   
+				System.out.println("USER_ID BE :"+ "\t" + rs.getInt(USER_ID) +
+						"\n" + "USER_NAME BE :" + " \t" + rs.getString(USER_NAME) + 
+						"\n" + "USER_COMPANY_NAME GOING FOR INTERVIEW :" + "\t " + rs.getString(USER_COMPANY_NAME)+ 
+						"\n" + "USER_SALARY BE :" + " \t" + rs.getString(USER_SALARY)+ 
+						"\n" + "USER_CONTACT_NO BE :" + " \t" + rs.getString(USER_CONTACT_NO)+
+						"\n" + "USER_POST HE APPLIED FOR :" + "\t " + rs.getString(USER_POST)+
+						"\n" + "USER_LOCATION BE :" + " \t" + rs.getString(USER_LOCATION)+ 
+						"\n" + "COMPANY_DATE FOR INTERVIEW :" + " \t" + rs.getString(COMPANY_DATE)+ 
+						"\n" + "COMPANY_TIME FOR INTERVIEW :" + "\t " + rs.getString(COMPANY_TIME)+
+						"\n" + "COMPANY_LOCATION FOR INTERVIEW :" + "\t " + rs.getString(COMPANY_LOCATION));   
 				
 			}
 			con.close();
@@ -90,15 +90,16 @@ public class UserDetails {
 			ResultSet rs=pstm.executeQuery();
 
 			System.out.println("**********************************************************************************************");
-			System.out.println("USER_ID"+ " \t" + "USER_NAME" +
-					"\t " + "USER_COMPANY_NAME"+ " \t" + "USER_SALARY"+ " \t" +
-					"USER_CONTACT_NO" + "\t " + "USER_POST" + " \t" + "USER_LOCATION");   
+			   
 			while(rs.next())
 			{
-				System.out.println(
-						rs.getInt(USER_ID) + " \t" + rs.getString(USER_NAME) +
-						"\t " + rs.getString(USER_COMPANY_NAME)+ " \t" + rs.getString(USER_SALARY)+ " \t" +
-						rs.getString(USER_CONTACT_NO)+ "\t " + rs.getString(USER_POST)+ " \t" + rs.getString(USER_LOCATION));   
+				System.out.println("USER_ID BE :"+ "\t" + rs.getInt(USER_ID) +
+						"\n" + "USER_NAME BE :" + " \t" + rs.getString(USER_NAME) + 
+						"\n" + "USER_COMPANY_NAME GOING FOR INTERVIEW :" + "\t " + rs.getString(USER_COMPANY_NAME)+ 
+						"\n" + "USER_SALARY BE :" + " \t" + rs.getString(USER_SALARY)+ 
+						"\n" + "USER_CONTACT_NO BE :" + " \t" + rs.getString(USER_CONTACT_NO)+
+						"\n" + "USER_POST HE APPLIED FOR :" + "\t " + rs.getString(USER_POST)+
+						"\n" + "USER_LOCATION BE :" + " \t" + rs.getString(USER_LOCATION));   
 				
 			}
 			con.close();
@@ -126,15 +127,15 @@ public class UserDetails {
 			pstm.setString(1,company_name);
 			ResultSet rs=pstm.executeQuery();
 
-			/*System.out.println("**********************************************************************************************");
-			System.out.println("USER_ID"+ " \t" + "USER_NAME" +
-					"\t " + "USER_COMPANY_NAME"+ " \t" + "USER_SALARY"+ " \t" +
-					"USER_CONTACT_NO" + "\t " + "USER_POST" + " \t" + "USER_LOCATION");   */
+			System.out.println("**********************************************************************************************");
+			
 			while(rs.next())
 			{
-				System.out.println(
-						rs.getString(COMPANY_ID)+ " \t" + rs.getString(COMPANY_DATE)+ "\t " +rs.getString(COMPANY_TIME)+ "\t " +
-								rs.getString(COMPANY_LOCATION));   
+				System.out.println("COMPANY_ID BE :" + " \t\t\t" + rs.getInt(COMPANY_ID)+
+						"\n" + "COMPANY_NAME BE :" + " \t\t\t"  + rs.getString(COMPANY_NAME)+
+						"\n" + "COMPANY_DATE FOR INTERVIEW BE :" + " \t" + rs.getString(COMPANY_DATE)+ 
+						"\n" + "COMPANY_TIME FOR INTERVIEW BE :" + "\t\t " + rs.getString(COMPANY_TIME)+
+						"\n" + "COMPANY_LOCATION FOR INTERVIEW BE :" + "\t " + rs.getString(COMPANY_LOCATION));   
 				
 			}
 			con.close();
